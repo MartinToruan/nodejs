@@ -1,3 +1,10 @@
+# How to Initialize
+To Initalize NPM in your project :
+```
+npm init
+```
+After that, you'll see a new file called <b>package.json</b>, and you can edit this file and add your startup script.
+
 # How to run
 Based on the package.json file, you can start the server by several ways as mentioned below
 ## General scripts
@@ -10,11 +17,11 @@ $ npm start
 $ npm run start-server
 ```
 
-# Auto Restart Server
+# Auto Restart Server using Nodemon Lib
 There are several options to install, which are Global, Development, and Production.
 ## Global
 ```angular2html
-$npm install -g nodemon
+$npm install nodemon -g
 ```
 ## Development
 ```angular2html
@@ -37,3 +44,12 @@ Later, when you come back and want to work at this project, you can re-install a
 $ npm install
 ```
 That comment will look all dependencies listed on package.json field `devDependencies` for development environment.
+
+# Type of Errors
+There are 3 types of errors:
+- Syntax Error
+- Runtime Error
+- Logical Error
+
+Syntax and Runtime errors will throw error messages along with the line numbers on your terminal or on the server log.
+Logical errors can be fixed with testing and the help of debugger.
