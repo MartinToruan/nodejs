@@ -43,7 +43,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 ```
 Lastly, we can read the body in our code.
 ```
-consoleapp.use('/product', (req, resp, next)=> {
+app.use('/product', (req, resp, next)=> {
     console.log(req.body);
 
     resp.redirect('/')
@@ -99,4 +99,39 @@ const adminRoutes = require('./routes/admin');
 app.use(adminRoutes);
 ```
 
+## Filtering Path
+If you want to add prefix for a routes, for example '/admin', you can add it on the app.js file like the following
+```
+app.use('/admin', adminRoutes);
+```
+By doing so, all the url on the adminRoutes will be accessible by adding the prefix 'admin', for example
+```
+localhost:3000/admin/add-product
+``` 
+
 ## Returning HTML Pages (Files)
+You can server an HTML File to the client with the following code.
+```
+router.get('/add-product', (req, resp, next) => {
+    resp.sendFile(path.join(__dirname, "..", "views", "add-product.html"));
+})
+```
+The path.join will return the correct html file which is stored under views folder. 
+
+<b>__dirname</b> will return the path to the current file (which is ../routes/admin.js for example).
+
+
+'<b>..</b>' means to go up 1 folder
+
+
+## Serving Static File (css | js)
+You can serve your static files by adding this on your app.js file. In this example, we place all of our static files inside <b>public</b> folder.
+```
+app.use(express.static(path.join(__dirname, "public")))
+```
+
+Next, you can use the static files on your html pages like this:
+```
+<link rel="stylesheet" href="/css/main.css">
+```
+By doing that, nodejs will automatically looks into the public folder, and continue look for <b>css</b> folder, and lastly find the <b>main.css</b> file
