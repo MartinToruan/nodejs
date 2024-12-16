@@ -7,20 +7,23 @@ const expressHbs = require('express-handlebars');
 
 const app = express();
 
+// Using EJS Template Enginee
+app.set('view engine', 'ejs');
+
 // Works for Pug Template Engine
 // app.set('view engine', 'pug'); 
 
 // Using Express Handlebars template engine
-app.engine(
-    'handlebars', 
-    expressHbs({
-        layoutsDir: 'views/layouts/',
-        defaultLayout: 'main-layout',
-        extname: 'handlebars'
-    })
-);
-
-app.set('view engine', 'handlebars');
+// app.engine(
+//     'handlebars',
+//     expressHbs({
+//         layoutsDir: 'views/layouts/',
+//         defaultLayout: 'main-layout',
+//         extname: 'handlebars'
+//     })
+// );
+//
+// app.set('view engine', 'handlebars');
 
 const adminData = require('./routes/admin');
 const shopRoutes = require('./routes/shop');

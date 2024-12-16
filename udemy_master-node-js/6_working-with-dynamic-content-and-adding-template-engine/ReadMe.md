@@ -12,6 +12,28 @@ Available template engine for NodeJS are:
   ```
   npm install ejs --save-dev
   ```
+  Set the view engine to use 'ejs' on your app.js (this is similar with Pug)
+  ```
+  const app = express();
+  app.set('view engine', 'ejs');
+  ```
+  Create your view file (ejs file) under the views folder. For example <b>404.ejs</b>
+
+  Lastly you can follow Pug & Handlers bars on how to render the template and pass data.
+
+  How to add conditions and loop data can be seen on **shop.ejs**
+
+  By default EJS doesn't support Layouts, but we can use includes mechanism.
+  
+  First, you need to decomposed your html file into several parts (in this example: head.ejs, nav.ejs, and end.ejs)
+
+  Second, you can import those decomposed files into your HTML Page like the following code.
+
+  ```angular2html
+  [file: views/404.ejs]
+  
+  <%- include('includes/head.ejs') %>
+  ```
 
 - Pug (Jade)
     - 
