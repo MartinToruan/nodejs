@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= pageTitle %></title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Users</a></li>
+                <li><a href="/add-user">Add User</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1>Register Users</h1>
+    <% if(users.length > 0) { %>
+        <ul>
+            <% for(let user of users) { %>
+            <li><%= user.username %></li>
+            <% } %>
+        </ul>
+    <% } else { %>
+        <h1>There's no registered user so far.</h1>
+    <% } %>
+</body>
+</html>
