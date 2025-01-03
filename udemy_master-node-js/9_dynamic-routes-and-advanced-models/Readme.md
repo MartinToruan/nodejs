@@ -46,6 +46,18 @@ const prodID = req.body.prodId;
 ```
 
 ## Using Query Params
-
+Query params in NodeJS is very straigtforward.
+For example, user sends the following request
+```
+http://localhost:3000/admin/edit-product/0.8404832230914747?edit=true
+```
+As you can see, there's 1 query param:
+```
+edit=true
+```
+You can capture this Query parameters on your code using the following syntax"
+```
+const editMode = req.query.edit;
+```
 
 ## Enhance our Models
